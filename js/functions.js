@@ -11,9 +11,9 @@ function clearMessages(){
 function printMoves(player, comp) {
 	document.getElementById("move_1").textContent = player;
 	document.getElementById("move_2").textContent = comp;
-  }
+}
 
 function score(player, comp) {
 	document.getElementById("player-score").textContent = player;
 	document.getElementById("comp-score").textContent = comp;
-  }
+}
