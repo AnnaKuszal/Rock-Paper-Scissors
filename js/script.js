@@ -1,6 +1,8 @@
 let playerScore = 0;
 let compScore = 0;
 
+let roundNumber = 1;
+
 
 function playGame(playerInput){
   clearMessages();
@@ -54,6 +56,8 @@ function playGame(playerInput){
     score(playerScore, compScore);
   }
 
+  roundNumber++;
+  round(roundNumber);
   displayResult(computerMove, playerMove);
 }
 
@@ -67,4 +71,11 @@ document.getElementById('play-paper').addEventListener('click', function(){
 
 document.getElementById('play-scissors').addEventListener('click', function(){
   playGame(3);
+});
+
+document.getElementById('new-game').addEventListener('click', function(){
+  clearMessages();
+  clearMoves();
+  resetScore();
+  resetRound();
 });
