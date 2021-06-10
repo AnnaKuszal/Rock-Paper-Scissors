@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Notable&display=swap");
+/* Variables */
+/* Global */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body { margin: 0; padding: 0; font-family: "Aldrich", sans-serif; color: yellow; background-color: darkblue; font-size: 1rem; line-height: 1.7; }
+
+section { height: 100vh; }
+
+.container { height: 100%; }
+
+.row { display: flex; flex-wrap: wrap; width: 100%; }
+
+h1, h2, h3 { text-align: center; }
+
+h1, h2, h3, h4 { margin-top: 0; }
+
+h4 { margin-bottom: 0; }
+
+h2 { border: 2px solid yellow; }
+
+.section-subtitle, .numbers, .move-name { font-weight: 700; }
+
+.btn { background-color: yellow; color: darkblue; font-family: "Aldrich", sans-serif; cursor: pointer; border: none; border-radius: 5px; text-decoration: none; }
+
+.start-game, .new-game, .test-games { display: inline-block; font-weight: 700; padding: 10px 20px; }
+
+.btn-play { color: yellow; background-color: darkblue; border: 4px solid yellow; width: 4rem; height: 4rem; cursor: pointer; }
+
+.active { color: darkblue; background-color: yellow; }
+
+/* Header */
+header { height: 100vh; text-align: center; }
+
+header .container .header-wrapper { margin: 0 auto; height: 100%; display: flex; flex-direction: column; justify-content: space-evenly; }
+
+@keyframes switch-color { 0% { background-color: darkblue;
+    color: yellow; }
+  20% { background-color: yellow;
+    color: darkblue; }
+  25% { background-color: darkblue;
+    color: yellow; }
+  100% { background-color: darkblue;
+    color: yellow; } }
+
+header .title { margin-bottom: 0; }
+
+header .title .first-letter { animation-name: switch-color; animation-duration: 3s; animation-iteration-count: infinite; }
+
+header .title .first-letter:nth-child(1) { animation-delay: 1s; }
+
+header .title .first-letter:nth-child(2) { animation-delay: 2s; }
+
+header .title .first-letter:nth-child(3) { animation-delay: 3s; }
+
+header .game-icons { display: flex; justify-content: space-evenly; margin-bottom: 2rem; }
+
+@keyframes rotation { 0% { transform: rotate(-45deg); }
+  50% { transform: rotate(45deg); }
+  100% { transform: rotate(-45deg); } }
+
+header .game-icons i { transition: all 1s; animation-name: rotation; animation-duration: 6s; animation-iteration-count: infinite; }
+
+header .enter-game { display: inline-block; font-weight: 700; padding: 10px 20px; }
+
+/* Intro */
+.intro ul { padding-left: 15px; }
+
+.intro .about, .intro .rules { flex: 100%; }
+
+.intro .row.bottom div { flex: 50%; display: flex; align-items: center; }
+
+.intro .row.bottom div:last-child { justify-content: flex-end; }
+
+/* Game panel */
+.game-panel .container .row.score-panel { border: 2px solid yellow; }
+
+.game-panel .round { flex: 100%; padding: 0 5px; }
+
+.game-panel .score, .game-panel .won-games { flex: 50%; text-align: right; padding: 0 5px; }
+
+.game-panel .msg-wrapper .row > div { flex: 50%; }
+
+.game-panel .msg-wrapper #messages { font-weight: 700; text-align: right; text-transform: uppercase; }
+
+.game-panel .summary-msg { color: darkblue; background-color: yellow; text-align: center; font-weight: 700; }
+
+.game-panel #buttons { display: flex; justify-content: space-between; }
+
+/* Extra-game */
+.extra-game { height: 90vh; }
+
+.extra-game .row.switch-panel div { flex: 50%; display: flex; }
+
+.extra-game .row.switch-panel > div:nth-child(1) { justify-content: flex-start; align-items: flex-end; }
+
+.extra-game .row.switch-panel > div:nth-child(2) { flex-wrap: wrap; justify-content: flex-end; align-items: center; }
+
+.extra-game .row.switch-panel p { margin-top: 0; }
+
+.extra-game .row.switch-panel .start-game { margin-bottom: 1rem; margin-left: 1rem; }
+
+.extra-game .row.switch-panel #offMode { display: inline; }
+
+.extra-game .row.switch-panel #onMode { display: none; }
+
+.extra-game .row.switch-panel .switchMode #offMode { display: none; }
+
+.extra-game .row.switch-panel .switchMode #onMode { display: inline; }
+
+/* Footer */
+footer { height: 10vh; width: 100%; border-top: 2px solid yellow; display: flex; align-items: center; }
+
+footer p { margin: 0; }
+
+/* Media queries */
+@media (min-width: 320px) { .container { padding: 20px 20px; }
+  h2 { font-size: 3vh; }
+  .btn-play { font-size: 4.2vh; width: 10vh; height: 10vh; }
+  header .container .header-wrapper { width: 70%; }
+  header .title { font-size: 8vh; }
+  header .game-icons { font-size: 8vh; }
+  header .enter-game { font-size: 4vh; }
+  .intro { font-size: 2.2vh; }
+  .intro .section-subtitle { font-size: 2.5vh; }
+  .game-panel { font-size: 2.2vh; }
+  .game-panel .msg-wrapper { padding: 1vh 0; }
+  .game-panel .player-card, .game-panel .comp-card, .game-panel .btn-card { flex: 100%; padding: 1vh 0; }
+  .game-panel .btn-card { display: flex; justify-content: space-between; }
+  .game-panel .btn-card .btn { font-size: 2.2vh; }
+  .game-panel .numbers, .game-panel .move-name { font-size: 2.7vh; }
+  .extra-game { font-size: 2.2vh; }
+  .extra-game .game-options > div { flex: 100%; }
+  .extra-game .game-options > div:nth-child(1) { border-bottom: 2px solid yellow; }
+  .extra-game input { height: 4vh; font-size: 2.2vh; }
+  .extra-game .btn.test-games { font-size: 2.2vh; }
+  .extra-game .btn-play { margin-bottom: 1rem; }
+  footer { font-size: 2vh; padding: 0 20px; } }
+
+@media (min-width: 360px) { .container { padding: 20px 30px; }
+  .extra-game .game-options > div:nth-child(1) { padding-bottom: 1vh; }
+  .extra-game .game-options > div:nth-child(2) { padding-top: 1vh; }
+  .extra-game .row.switch-panel > div:nth-child(1) { flex: 30%; }
+  .extra-game .row.switch-panel > div:nth-child(2) { flex: 70%; }
+  footer { padding: 0 30px; } }
+
+@media (min-width: 576px) { .container { padding: 20px 50px; }
+  .intro { font-size: 2.3vh; }
+  .game-panel { font-size: 2.3vh; }
+  .game-panel .msg-wrapper { padding: 0; }
+  .game-panel .btn-card .btn { font-size: 2.3vh; }
+  .extra-game { font-size: 2.3vh; }
+  .extra-game .game-options > div:nth-child(1) { padding-bottom: 2.5vh; }
+  .extra-game .game-options > div:nth-child(2) { padding-top: 2.5vh; }
+  .extra-game .game-options .row.switch-panel > div:nth-child(2) { justify-content: space-between; }
+  .extra-game .row.switch-panel .start-game { margin-left: 0; }
+  .extra-game input { font-size: 2.3vh; }
+  .extra-game .btn.test-games { font-size: 2.3vh; }
+  footer { padding: 0 50px; } }
+
+@media (min-width: 768px) { .container { padding: 20px 70px; }
+  h2 { font-size: 3.5vh; margin: 2vh 0; }
+  .game-panel .player-card, .game-panel .comp-card, .game-panel .btn-card { flex: 100%; padding: 0.5vh 0; } }
+
+@media (min-width: 992px) { h2 { font-size: 4vh; margin: 3vh 0; }
+  .game-panel .score-panel, .game-panel .msg-wrapper, .game-panel .game-control { width: 70vw; margin-left: auto; margin-right: auto; }
+  .game-panel .player-card, .game-panel .comp-card, .game-panel .btn-card { padding: 0; }
+  .extra-game .game-options { width: 70vw; margin-left: auto; margin-right: auto; }
+  .extra-game .game-options > div:nth-child(1) { padding-bottom: 1vh; }
+  .extra-game .game-options > div:nth-child(2) { padding-top: 1vh; } }
+
+@media (min-width: 1200px) { h2 { width: 80%; margin: 3vh auto; }
+  header .container .header-wrapper { width: 50%; }
+  .intro { font-size: 2.5vh; }
+  .intro .row { width: 45vw; margin: 0 auto; }
+  .intro .row.bottom { margin-top: 3vh; }
+  .game-panel { font-size: 2.5vh; }
+  .game-panel .score-panel, .game-panel .msg-wrapper, .game-panel .game-control { width: 40vw; }
+  .game-panel .msg-wrapper p { margin-bottom: 0; }
+  .game-panel .btn-card .btn { font-size: 2.5vh; }
+  .extra-game { font-size: 2.5vh; }
+  .extra-game .game-options { width: 40vw; }
+  .extra-game .game-options > div:nth-child(1) { padding-bottom: 3.5vh; }
+  .extra-game .game-options > div:nth-child(2) { padding-top: 3.5vh; }
+  .extra-game input { font-size: 2.5vh; }
+  .extra-game .btn.test-games { font-size: 2.5vh; } }
+
+@media (min-width: 1920px) { header .container .header-wrapper { width: 55%; }
+  .intro .row { width: 52vw; margin: 0 auto; } }
