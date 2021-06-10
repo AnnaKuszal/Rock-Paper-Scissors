@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, paper, scissors</title>
+    <script src="https://kit.fontawesome.com/d5f030e1bf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-wrapper">
+          <h1 class="title"><span class="first-letter">R</span>ock <span class="first-letter">P</span>aper <span class="first-letter">S</span>cissors</h1>
+          <div class="game-icons">
+            <i class="far fa-hand-rock"></i>
+            <i class="far fa-hand-paper"></i>
+            <i class="far fa-hand-scissors"></i>
+          </div>
+
+          <div>
+            <a class="btn enter-game" href="#intro">ENTER</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="intro" class="intro">
+      <div class="container">
+        <h2>WELCOME TO&nbsp;THE&nbsp;GAME !!!</h2>
+        <div class="row">
+          <div class="about">
+            <div>
+              <h4 class="section-subtitle">ABOUT</h4>
+              <p>“Rock paper scissors” is a simple and interesting game. Many of us used to play it in a school to resolve disputes or just to spend some time.</p>
+            </div>
+          </div>
+          <div class="rules">
+            <h4 class="section-subtitle">RULES</h4>
+            <ul>
+              <li>If you choose Rock, you will win against Scissors but lose against Paper.</li>
+              <li>If you choose Scissors, you will win against Paper but lose against Rock.</li>
+              <li>If you choose Paper, you will win against Rock but lose against Scissors.</li>
+            </ul>
+            <p>
+            There can be 5 rounds in a single game. The game ends when somebody gets 3 wins.
+            A draw adds no points to participants. If you want to play again, just click “Play again” button
+            after your game is finished.
+            </p>
+          </div>
+        </div>
+
+        <div class="row bottom">
+          <div>
+            <p class="section-subtitle">HAVE FUN!!!</p>
+          </div>
+          <div>
+            <a class="btn start-game" href="#game-panel">START</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="game-panel" class="game-panel">
+      <div class="container">
+        <h2>GAME PANEL</h2>
+        <div class="row score-panel">
+          <div class="round">
+            <div class="section-title">ROUND: <span  id="round-number" class="numbers">0</span></div>
+          </div>
+          <div class="score">
+            <p class="section-title">Score:</p>
+            <div>
+              PLAYER: <span id="player-score" class="numbers">0</span><br>
+              COMPUTER: <span id="comp-score" class="numbers">0</span><br>
+              DRAW: <span id="draw-number" class="numbers">0</span>
+            </div>
+          </div>
+          <div class="won-games">
+            <p class="section-title">Won games:</p>
+            <div>
+              PLAYER: <span id="player-games" class="numbers">0</span><br>
+              COMPUTER: <span id="comp-games" class="numbers">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="msg-wrapper">
+          <div class="row">
+            <div><p>Choose your moves!</p></div>
+            <div><p id="messages"></p></div>
+          </div>
+          <p id="summary-msg" class="summary-msg">And the winner is...</p>
+        </div>
+
+        <div class="row game-control">
+          <div class="player-card">
+            <p>PLAYER: <span class="move-name" id="move_1"></span></p>
+            <div id="buttons" class="row">
+              <button class="btn btn-play" id="play-rock"><i class="far fa-hand-rock"></i></button>
+              <button class="btn btn-play" id="play-paper"><i class="far fa-hand-paper"></i></button>
+              <button class="btn btn-play" id="play-scissors"><i class="far fa-hand-scissors"></i></button>
+            </div>
+          </div>
+
+          <div class="comp-card">
+            <p>COMPUTER: <span class="move-name" id="move_2"></span></p>
+          </div>
+
+          <div class="btn-card">
+            <button class="btn new-game" id="new-game">PLAY AGAIN</button>
+            <a class="btn new-game" href="#extra-game">SEE MORE...</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="extra-game" class="extra-game">
+      <div class="container">
+        <h2>AND IF...?</h2>
+        <div class="row game-options">
+          <div>
+            <p class="section-subtitle">This is special JOKER button. It will make you win EVERY TIME!!!</p>
+            <p>Turn it on and play again !</p>
+            <div class="row switch-panel">
+              <div>
+                <button id="jokerBtn" class="btn btn-play"><i class="fas fa-smile-wink"></i></button>
+              </div>
+
+              <div>
+                <p id="modes">JOKER mode <span id="offMode">OFF</span><span id="onMode">ON</span>!</p>
+                <a class="btn start-game" href="#game-panel">GO BACK</a>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p class="section-subtitle">Wanna know how many times the&nbsp;Computer will loose...?</p>
+            <p>Choose a number of rounds (10-&nbsp;100):
+              <input type="number" id="select-rounds" name="select-rounds" size="3" min="10" max="100" required>
+            </p>
+            <button class="btn test-games" id="test-games">START TEST GAMES</button>
+            <br>
+            <p style="margin-bottom: 0;">Computer failure probability: <span class="numbers" id="failure-result">0%</span></p>
+            Press <b>GO BACK</b> button to see results.<br>
+            Press <b>PLAY AGAIN</b> to reset results.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy;Copyright by Anna Kuszal (2019-2021). All&nbsp;rights&nbsp;reserved.</p>
+    </footer>
+
+    <script src="js/functions.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
